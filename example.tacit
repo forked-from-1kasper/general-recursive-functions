@@ -19,5 +19,6 @@ gt := sign ∘ sub
 lt := gt ∘ (π 2 2, π 1 2)
 
 le := ¬ ∘ gt
+ge := ¬ ∘ lt
 
 isqrt := μ (lt ∘ (sqr ∘ π 1 2, π 2 2))
