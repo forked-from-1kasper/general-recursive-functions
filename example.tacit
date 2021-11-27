@@ -2,7 +2,10 @@ I := π 1 1
 
 add := ρ I (S ∘ π 2 3)
 mul := ρ (C 1 0) (add ∘ (π 3 3, π 2 3))
-sqr := mul ∘ (I, I)
+pow := ρ (C 1 1) (mul ∘ (π 3 3, π 2 3)) ∘ (π 2 2, π 1 2)
+
+sqr  := mul ∘ (I, I)
+sqr′ := pow ∘ (I, C 1 2)
 
 ite := ρ (π 2 2) (π 3 4)
 sign := ρ 0 (C 2 1)
@@ -10,10 +13,13 @@ sign := ρ 0 (C 2 1)
 ¬ := ρ 1 (C 2 0)
 ∨ := sign ∘ add
 ∧ := sign ∘ mul
+→ := ∨ ∘ (¬ ∘ π 1 2, π 2 2)
 
 P := ρ 0 (π 1 2)
 sub := ρ I (P ∘ π 2 3) ∘ (π 2 2, π 1 2)
+
 max := ite ∘ (sub, π 1 2, π 2 2)
+min := ite ∘ (sub, π 2 2, π 1 2)
 
 gt := sign ∘ sub
 lt := gt ∘ (π 2 2, π 1 2)
